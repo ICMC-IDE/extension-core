@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "lib": ["DOM", "ESNext"],
+    "target": "ES2023",
+    "module": "ES2022",
+    "allowJs": false,
+    "declaration": true,
+    "declarationMap": true,
+    "inlineSources": true,
+    "inlineSourceMap": true,
+    "outDir": "./dist/",
+    "moduleResolution": "bundler"
+  }
+}

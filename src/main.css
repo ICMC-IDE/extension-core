@@ -1,0 +1,7 @@
+button {
+    &.activity {
+        svg {
+            font-size: 2em;
+        }
+    }
+}

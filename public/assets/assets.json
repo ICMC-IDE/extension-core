@@ -1,0 +1,13 @@
+{
+  "internal": [
+    "internal/palette/4bit.json",
+    "internal/palette/8bit.json",
+    "internal/syntax/icmc.toml",
+    "internal/charmap.mif",
+    "internal/charmap.bin"
+  ],
+  "user": [
+    "user/example.c",
+    "user/example.asm"
+  ]
+}

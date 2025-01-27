@@ -1,0 +1,47 @@
+<form onsubmit="return false;">
+    <fieldset class="hspan2">
+        <legend>Address</legend>
+        <input name="address" type="text" value="0xFF00" disabled />
+    </fieldset>
+    <fieldset class="hspan2">
+        <legend>Instruction</legend>
+        <input name="instruction" type="text" value="-" disabled />
+    </fieldset>
+    <fieldset>
+        <legend>Hex</legend>
+        <input name="hex" type="text" value="FFFF" disabled />
+    </fieldset>
+    <fieldset>
+        <legend>Octal</legend>
+        <input name="octal" type="text" value="177777" disabled />
+    </fieldset>
+    <fieldset>
+        <legend>Signed</legend>
+        <input name="signed" type="number" step="1" min="-32768" max="32767" />
+    </fieldset>
+    <fieldset>
+        <legend>Unsigned</legend>
+        <input name="unsigned" type="number" step="1" min="0" max="36536" />
+    </fieldset>
+    <fieldset class="hspan2">
+        <legend>Binary</legend>
+        <div class="binary">
+            <input name="bit" title="Bit 15 (32768)" type="checkbox" />
+            <input name="bit" title="Bit 14 (16384)" type="checkbox" />
+            <input name="bit" title="Bit 13 (8192)" type="checkbox" />
+            <input name="bit" title="Bit 12 (4096)" type="checkbox" />
+            <input name="bit" title="Bit 11 (2048)" type="checkbox" />
+            <input name="bit" title="Bit 10 (1024)" type="checkbox" />
+            <input name="bit" title="Bit 9 (512)" type="checkbox" />
+            <input name="bit" title="Bit 8 (256)" type="checkbox" />
+            <input name="bit" title="Bit 7 (128)" type="checkbox" />
+            <input name="bit" title="Bit 6 (64)" type="checkbox" />
+            <input name="bit" title="Bit 5 (32)" type="checkbox" />
+            <input name="bit" title="Bit 4 (16)" type="checkbox" />
+            <input name="bit" title="Bit 3 (8)" type="checkbox" />
+            <input name="bit" title="Bit 2 (4)" type="checkbox" />
+            <input name="bit" title="Bit 1 (2)" type="checkbox" />
+            <input name="bit" title="Bit 0 (1)" type="checkbox" />
+        </div>
+    </fieldset>
+</form>

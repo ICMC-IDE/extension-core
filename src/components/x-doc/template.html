@@ -1,0 +1,684 @@
+<table>
+  <thead>
+    <tr>
+      <th>Mnemonic</th>
+      <th>Opcode</th>
+      <th>Pseudo-Code</th>
+    </tr>
+  </thead>
+  <tr>
+    <th colspan="10">Memory</th>
+  </tr>
+  <tr>
+    <td>
+      <span class="mnemonic">store</span>
+      <span class="address">address</span>,
+      <span class="register">rx</span>
+    </td>
+    <td>110001</td>
+    <td>*address = rx</td>
+  </tr>
+  <tr>
+    <td>
+      <span class="mnemonic">storei</span>
+      <span class="register">rx</span>, <span class="register">ry</span>
+    </td>
+    <td>111101</td>
+    <td>**rx = ry</td>
+  </tr>
+
+  <tr>
+    <td>
+      <span class="mnemonic">load</span> <span class="register">rx</span>,
+      <span class="address">address</span>
+    </td>
+    <td>110000</td>
+    <td>rx = *address</td>
+  </tr>
+  <tr>
+    <td>
+      <span class="mnemonic">loadi</span>
+      <span class="register">rx</span>, <span class="register">ry</span>
+    </td>
+    <td>111100</td>
+    <td>rx = **ry</td>
+  </tr>
+  <tr>
+    <td>
+      <span class="mnemonic">loadn</span>
+      <span class="register">rx</span>, #<span class="number">number</span>
+    </td>
+    <td>111000</td>
+    <td>rx = number</td>
+  </tr>
+
+  <tr>
+    <th colspan="10">Move</th>
+  </tr>
+  <tr>
+    <td>
+      <span class="mnemonic">mov</span> <span class="register">rx</span>,
+      <span class="register">ry</span>
+    </td>
+    <td>110011</td>
+    <td>rx = ry</td>
+  </tr>
+  <tr>
+    <td>
+      <span class="mnemonic">mov</span> <span class="register">rx</span>,
+      <span class="register">sp</span>
+    </td>
+    <td>110011</td>
+    <td>rx = sp</td>
+  </tr>
+  <tr>
+    <td>
+      <span class="mnemonic">mov</span> <span class="register">sp</span>,
+      <span class="register">rx</span>
+    </td>
+    <td>110011</td>
+    <td>sp = rx</td>
+  </tr>
+
+  <tr>
+    <th colspan="10">Arithmetic</th>
+  </tr>
+  <tr>
+    <td>
+      <span class="mnemonic">add</span> <span class="register">rx</span>,
+      <span class="register">ry</span>, <span class="register">rz</span>
+    </td>
+    <td>100000</td>
+    <td>rx = ry + rz</td>
+  </tr>
+  <tr>
+    <td>
+      <span class="mnemonic">add</span> <span class="register">rx</span>,
+      <span class="register">ry</span>
+    </td>
+    <td>100000</td>
+    <td>rx += ry</td>
+  </tr>
+  <tr>
+    <td>
+      <span class="mnemonic">addc</span> <span class="register">rx</span>,
+      <span class="register">ry</span>, <span class="register">rz</span>
+    </td>
+    <td>100000</td>
+    <td>rx = ry + rz + carry</td>
+  </tr>
+  <tr>
+    <td>
+      <span class="mnemonic">addc</span> <span class="register">rx</span>,
+      <span class="register">ry</span>
+    </td>
+    <td>100000</td>
+    <td>rx = rx + ry + carry</td>
+  </tr>
+
+  <tr>
+    <td>
+      <span class="mnemonic">sub</span> <span class="register">rx</span>,
+      <span class="register">ry</span>, <span class="register">rz</span>
+    </td>
+    <td>100001</td>
+    <td>rx = ry - rz</td>
+  </tr>
+  <tr>
+    <td>
+      <span class="mnemonic">sub</span> <span class="register">rx</span>,
+      <span class="register">ry</span>
+    </td>
+    <td>100001</td>
+    <td>rx -= ry</td>
+  </tr>
+  <tr>
+    <td>
+      <span class="mnemonic">subc</span> <span class="register">rx</span>,
+      <span class="register">ry</span>, <span class="register">rz</span>
+    </td>
+    <td>100001</td>
+    <td>rx = ry - rz + carry</td>
+  </tr>
+  <tr>
+    <td>
+      <span class="mnemonic">subc</span> <span class="register">rx</span>,
+      <span class="register">ry</span>
+    </td>
+    <td>100001</td>
+    <td>rx = rx - ry + carry</td>
+  </tr>
+
+  <tr>
+    <td>
+      <span class="mnemonic">mul</span> <span class="register">rx</span>,
+      <span class="register">ry</span>, <span class="register">rz</span>
+    </td>
+    <td>100010</td>
+    <td>rx = ry * rz</td>
+  </tr>
+  <tr>
+    <td>
+      <span class="mnemonic">mul</span> <span class="register">rx</span>,
+      <span class="register">ry</span>
+    </td>
+    <td>100010</td>
+    <td>rx *= ry</td>
+  </tr>
+  <tr>
+    <td>
+      <span class="mnemonic">mulc</span> <span class="register">rx</span>,
+      <span class="register">ry</span>, <span class="register">rz</span>
+    </td>
+    <td>100010</td>
+    <td>rx = ry * rz + carry</td>
+  </tr>
+  <tr>
+    <td>
+      <span class="mnemonic">mulc</span> <span class="register">rx</span>,
+      <span class="register">ry</span>
+    </td>
+    <td>100010</td>
+    <td>rx = rx * ry + carry</td>
+  </tr>
+
+  <tr>
+    <td>
+      <span class="mnemonic">div</span> <span class="register">rx</span>,
+      <span class="register">ry</span>, <span class="register">rz</span>
+    </td>
+    <td>100011</td>
+    <td>rx = ry / rz</td>
+  </tr>
+  <tr>
+    <td>
+      <span class="mnemonic">div</span> <span class="register">rx</span>,
+      <span class="register">ry</span>
+    </td>
+    <td>100011</td>
+    <td>rx /= ry</td>
+  </tr>
+  <tr>
+    <td>
+      <span class="mnemonic">divc</span> <span class="register">rx</span>,
+      <span class="register">ry</span>, <span class="register">rz</span>
+    </td>
+    <td>100011</td>
+    <td>rx = ry / rz + carry</td>
+  </tr>
+  <tr>
+    <td>
+      <span class="mnemonic">divc</span> <span class="register">rx</span>,
+      <span class="register">ry</span>
+    </td>
+    <td>100011</td>
+    <td>rx = rx / ry + carry</td>
+  </tr>
+
+  <tr>
+    <td>
+      <span class="mnemonic">mod</span> <span class="register">rx</span>,
+      <span class="register">ry</span>, <span class="register">rz</span>
+    </td>
+    <td>100101</td>
+    <td>rx = ry % rz</td>
+  </tr>
+  <tr>
+    <td>
+      <span class="mnemonic">mod</span> <span class="register">rx</span>,
+      <span class="register">ry</span>
+    </td>
+    <td>100101</td>
+    <td>rx %= ry</td>
+  </tr>
+
+  <tr>
+    <td>
+      <span class="mnemonic">inc</span> <span class="register">rx</span>
+    </td>
+    <td>100100</td>
+    <td>rx++</td>
+  </tr>
+  <tr>
+    <td>
+      <span class="mnemonic">dec</span> <span class="register">rx</span>
+    </td>
+    <td>100100</td>
+    <td>rx--</td>
+  </tr>
+
+  <tr>
+    <th colspan="10">Logic</th>
+  </tr>
+  <tr>
+    <td>
+      <span class="mnemonic">and</span> <span class="register">rx</span>,
+      <span class="register">ry</span>, <span class="register">rz</span>
+    </td>
+    <td>010010</td>
+    <td>rx = ry &amp; rz</td>
+  </tr>
+  <tr>
+    <td>
+      <span class="mnemonic">and</span> <span class="register">rx</span>,
+      <span class="register">ry</span>
+    </td>
+    <td>010010</td>
+    <td>rx &amp;= ry</td>
+  </tr>
+  <tr>
+    <td>
+      <span class="mnemonic">or</span> <span class="register">rx</span>,
+      <span class="register">ry</span>, <span class="register">rz</span>
+    </td>
+    <td>010011</td>
+    <td>rx = ry | rz</td>
+  </tr>
+  <tr>
+    <td>
+      <span class="mnemonic">or</span> <span class="register">rx</span>,
+      <span class="register">ry</span>
+    </td>
+    <td>010011</td>
+    <td>rx |= ry</td>
+  </tr>
+  <tr>
+    <td>
+      <span class="mnemonic">xor</span> <span class="register">rx</span>,
+      <span class="register">ry</span>, <span class="register">rz</span>
+    </td>
+    <td>010100</td>
+    <td>rx = ry ^ rz</td>
+  </tr>
+  <tr>
+    <td>
+      <span class="mnemonic">xor</span> <span class="register">rx</span>,
+      <span class="register">ry</span>
+    </td>
+    <td>010100</td>
+    <td>rx ^= ry</td>
+  </tr>
+
+  <tr>
+    <td>
+      <span class="mnemonic">not</span> <span class="register">rx</span>,
+      <span class="register">ry</span>
+    </td>
+    <td>010101</td>
+    <td>rx = ~ry</td>
+  </tr>
+  <tr>
+    <td>
+      <span class="mnemonic">not</span> <span class="register">rx</span>
+    </td>
+    <td>010101</td>
+    <td>rx = ~ry</td>
+  </tr>
+
+  <tr>
+    <td>
+      <span class="mnemonic">rotl</span> <span class="register">rx</span>,
+      #<span class="number">bits</span>
+    </td>
+    <td>010000</td>
+  </tr>
+  <tr>
+    <td>
+      <span class="mnemonic">rotr</span> <span class="register">rx</span>,
+      #<span class="number">bits</span>
+    </td>
+    <td>010000</td>
+  </tr>
+
+  <tr>
+    <td>
+      <span class="mnemonic">shiftl0</span>
+      <span class="register">rx</span>, #<span class="number">bits</span>
+    </td>
+    <td>010000</td>
+    <td>rx = rx &lt;&lt; bits</td>
+  </tr>
+  <tr>
+    <td>
+      <span class="mnemonic">shiftl1</span>
+      <span class="register">rx</span>, #<span class="number">bits</span>
+    </td>
+    <td>010000</td>
+    <td>rx = rx &lt;&lt; bits | (1 &lt;&lt; bits - 1)</td>
+  </tr>
+  <tr>
+    <td>
+      <span class="mnemonic">shiftr0</span>
+      <span class="register">rx</span>, #<span class="number">bits</span>
+    </td>
+    <td>010000</td>
+    <td>rx = rx &gt;&gt; bits</td>
+  </tr>
+  <tr>
+    <td>
+      <span class="mnemonic">shiftr1</span>
+      <span class="register">rx</span>, #<span class="number">bits</span>
+    </td>
+    <td>010000</td>
+    <td>rx = rx &gt;&gt; bits | (0xFFFF &gt;&gt; bits &lt;&lt; bits)</td>
+  </tr>
+
+  <tr>
+    <td>
+      <span class="mnemonic">cmp</span> <span class="register">rx</span>,
+      <span class="register">ry</span>
+    </td>
+    <td>010110</td>
+  </tr>
+
+  <tr>
+    <th colspan="10">IO</th>
+  </tr>
+  <tr>
+    <td>
+      <span class="mnemonic">inchar</span>
+      <span class="register">rx</span>
+    </td>
+    <td>110101</td>
+  </tr>
+  <tr>
+    <td>
+      <span class="mnemonic">outchar</span>
+      <span class="register">rx</span>, <span class="register">ry</span>
+    </td>
+    <td>110010</td>
+  </tr>
+
+  <tr>
+    <th colspan="10">Jump</th>
+  </tr>
+  <tr>
+    <td>
+      <span class="mnemonic">jmp</span>
+      <span class="address">address</span>
+    </td>
+    <td>000010</td>
+  </tr>
+  <tr>
+    <td>
+      <span class="mnemonic">jeq</span>
+      <span class="address">address</span>
+    </td>
+    <td>000010</td>
+  </tr>
+  <tr>
+    <td>
+      <span class="mnemonic">jne</span>
+      <span class="address">address</span>
+    </td>
+    <td>000010</td>
+  </tr>
+  <tr>
+    <td>
+      <span class="mnemonic">jz</span>
+      <span class="address">address</span>
+    </td>
+    <td>000010</td>
+  </tr>
+  <tr>
+    <td>
+      <span class="mnemonic">jnz</span>
+      <span class="address">address</span>
+    </td>
+    <td>000010</td>
+  </tr>
+  <tr>
+    <td>
+      <span class="mnemonic">jc</span>
+      <span class="address">address</span>
+    </td>
+    <td>000010</td>
+  </tr>
+  <tr>
+    <td>
+      <span class="mnemonic">jnc</span>
+      <span class="address">address</span>
+    </td>
+    <td>000010</td>
+  </tr>
+  <tr>
+    <td>
+      <span class="mnemonic">jgr</span>
+      <span class="address">address</span>
+    </td>
+    <td>000010</td>
+  </tr>
+  <tr>
+    <td>
+      <span class="mnemonic">jle</span>
+      <span class="address">address</span>
+    </td>
+    <td>000010</td>
+  </tr>
+  <tr>
+    <td>
+      <span class="mnemonic">jeg</span>
+      <span class="address">address</span>
+    </td>
+    <td>000010</td>
+  </tr>
+  <tr>
+    <td>
+      <span class="mnemonic">jel</span>
+      <span class="address">address</span>
+    </td>
+    <td>000010</td>
+  </tr>
+  <tr>
+    <td>
+      <span class="mnemonic">jov</span>
+      <span class="address">address</span>
+    </td>
+    <td>000010</td>
+  </tr>
+  <tr>
+    <td>
+      <span class="mnemonic">jnov</span>
+      <span class="address">address</span>
+    </td>
+    <td>000010</td>
+  </tr>
+  <tr>
+    <td>
+      <span class="mnemonic">jn</span>
+      <span class="address">address</span>
+    </td>
+    <td>000010</td>
+  </tr>
+  <tr>
+    <td>
+      <span class="mnemonic">jdz</span>
+      <span class="address">address</span>
+    </td>
+    <td>000010</td>
+  </tr>
+
+  <tr>
+    <th colspan="10">Call</th>
+  </tr>
+  <tr>
+    <td>
+      <span class="mnemonic">call</span>
+      <span class="address">address</span>
+    </td>
+    <td>000011</td>
+    <td>address()</td>
+  </tr>
+  <tr>
+    <td>
+      <span class="mnemonic">ceq</span>
+      <span class="address">address</span>
+    </td>
+    <td>000011</td>
+    <td>if (eq) address()</td>
+  </tr>
+  <tr>
+    <td>
+      <span class="mnemonic">cne</span>
+      <span class="address">address</span>
+    </td>
+    <td>000011</td>
+    <td>if (ne) address()</td>
+  </tr>
+  <tr>
+    <td>
+      <span class="mnemonic">cz</span>
+      <span class="address">address</span>
+    </td>
+    <td>000011</td>
+    <td>if (z) address()</td>
+  </tr>
+  <tr>
+    <td>
+      <span class="mnemonic">cnz</span>
+      <span class="address">address</span>
+    </td>
+    <td>000011</td>
+    <td>if (nz) address()</td>
+  </tr>
+  <tr>
+    <td>
+      <span class="mnemonic">cc</span>
+      <span class="address">address</span>
+    </td>
+    <td>000011</td>
+    <td>if (c) address()</td>
+  </tr>
+  <tr>
+    <td>
+      <span class="mnemonic">cnc</span>
+      <span class="address">address</span>
+    </td>
+    <td>000011</td>
+    <td>if (nc) address()</td>
+  </tr>
+  <tr>
+    <td>
+      <span class="mnemonic">cgr</span>
+      <span class="address">address</span>
+    </td>
+    <td>000011</td>
+    <td>if (gr) address()</td>
+  </tr>
+  <tr>
+    <td>
+      <span class="mnemonic">cle</span>
+      <span class="address">address</span>
+    </td>
+    <td>000011</td>
+    <td>if (le) address()</td>
+  </tr>
+  <tr>
+    <td>
+      <span class="mnemonic">ceg</span>
+      <span class="address">address</span>
+    </td>
+    <td>000011</td>
+    <td>if (eg) address()</td>
+  </tr>
+  <tr>
+    <td>
+      <span class="mnemonic">cel</span>
+      <span class="address">address</span>
+    </td>
+    <td>000011</td>
+    <td>if (el) address()</td>
+  </tr>
+  <tr>
+    <td>
+      <span class="mnemonic">cov</span>
+      <span class="address">address</span>
+    </td>
+    <td>000011</td>
+    <td>if (ov) address()</td>
+  </tr>
+  <tr>
+    <td>
+      <span class="mnemonic">cnov</span>
+      <span class="address">address</span>
+    </td>
+    <td>000011</td>
+    <td>if (nov) address()</td>
+  </tr>
+  <tr>
+    <td>
+      <span class="mnemonic">cn</span>
+      <span class="address">address</span>
+    </td>
+    <td>000011</td>
+    <td>if (n) address()</td>
+  </tr>
+  <tr>
+    <td>
+      <span class="mnemonic">cdz</span>
+      <span class="address">address</span>
+    </td>
+    <td>000011</td>
+    <td>if (dz) address()</td>
+  </tr>
+
+  <tr>
+    <td><span class="mnemonic">rts</span></td>
+    <td>000100</td>
+    <td>return</td>
+  </tr>
+
+  <tr>
+    <th colspan="10">Stack</th>
+  </tr>
+  <tr>
+    <td>
+      <span class="mnemonic">push</span> <span class="register">rx</span>
+    </td>
+    <td>000101</td>
+  </tr>
+  <tr>
+    <td>
+      <span class="mnemonic">push</span> <span class="register">fr</span>
+    </td>
+    <td>000101</td>
+  </tr>
+
+  <tr>
+    <td>
+      <span class="mnemonic">pop</span> <span class="register">rx</span>
+    </td>
+    <td>000110</td>
+  </tr>
+  <tr>
+    <td>
+      <span class="mnemonic">pop</span> <span class="register">fr</span>
+    </td>
+    <td>000110</td>
+  </tr>
+
+  <tr>
+    <th colspan="10">Control</th>
+  </tr>
+  <tr>
+    <td><span class="mnemonic">clearc</span></td>
+    <td>001000</td>
+  </tr>
+  <tr>
+    <td><span class="mnemonic">setc</span></td>
+    <td>001000</td>
+  </tr>
+
+  <tr>
+    <td><span class="mnemonic">halt</span></td>
+    <td>001111</td>
+  </tr>
+  <tr>
+    <td><span class="mnemonic">nop</span></td>
+    <td>000000</td>
+  </tr>
+  <tr>
+    <td><span class="mnemonic">breakp</span></td>
+    <td>001110</td>
+  </tr>
+</table>

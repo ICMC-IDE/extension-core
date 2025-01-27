@@ -1,0 +1,7 @@
+@layer extension {
+    x-core-text {
+        display: block;
+        position: absolute;
+        inset: 0;
+    }
+}

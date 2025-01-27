@@ -1,0 +1,52 @@
+<form onsubmit="return false;">
+  <div>
+    <button name="reset"><svg-icon name="restartStop"></svg-icon> Reset</button>
+    <button name="play"><svg-icon name="run"></svg-icon> Run</button>
+    <button name="stop"><svg-icon name="stop"></svg-icon> Stop</button>
+    <button name="next"><svg-icon name="playForward"></svg-icon> Step in</button>
+  </div>
+
+  <div class="frequency">
+    <input name="frequency" type="range" value="1000000" min="1" max="60000000" step="1" list="frequencies" /><span>1 MHz</span>
+    <datalist id="frequencies">
+      <option>1</option>
+      <option>1000</option>
+      <option>1000000</option>
+      <option>10000000</option>
+    </datalist>
+  </div>
+</form>
+
+<fieldset>
+  <legend>Registers</legend>
+  <form onsubmit="return false;">
+    <div>
+      <label class="register"><span>R0:</span><input type="text" value="0000" /></label>
+      <label class="register"><span>R1:</span><input type="text" value="0000" /></label>
+      <label class="register"><span>R2:</span><input type="text" value="0000" /></label>
+      <label class="register"><span>R3:</span><input type="text" value="0000" /></label>
+    </div>
+    <div>
+      <label class="register"><span>R4:</span><input type="text" value="0000" /></label>
+      <label class="register"><span>R5:</span><input type="text" value="0000" /></label>
+      <label class="register"><span>R6:</span><input type="text" value="0000" /></label>
+      <label class="register"><span>R7:</span><input type="text" value="0000" /></label>
+    </div>
+  </form>
+</fieldset>
+
+<fieldset>
+  <legend>Internal Registers</legend>
+  <form onsubmit="return false;">
+    <div>
+      <label class="register"><span>FR:</span><input type="text" value="0000" /></label>
+      <label class="register"><span>SP:</span><input type="text" value="FFFF" /></label>
+      <label class="register"><span>PC:</span><input type="text" value="0000" /></label>
+      <label class="register"><span>IR:</span><input type="text" value="0000" /></label>
+    </div>
+    <div>
+      <label class="register"><span>KB:</span><input type="text" value="0000" /></label>
+      <label class="register"><span>WC:</span><input type="text" value="0000" /></label>
+    </div>
+  </form>
+</fieldset>

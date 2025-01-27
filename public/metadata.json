@@ -1,0 +1,14 @@
+{
+  "id": "core",
+  "title": "ICMC-IDE",
+  "entry": "main.js",
+  "version": "0.1.0",
+  "templates": [
+    {
+      "id": "blank",
+      "title": "Blank",
+      "description": "Blank template",
+      "tags": []
+    }
+  ]
+}

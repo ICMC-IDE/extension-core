@@ -1,0 +1,5 @@
+@layer extension {
+    x-core-activities {
+        display: contents;
+    }
+}
