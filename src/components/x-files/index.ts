@@ -1,5 +1,5 @@
-import App from "core/app";
-import * as FileSystem from "core/fs";
+import App from "@icmc-ide/core/app";
+import * as FileSystem from "@icmc-ide/core/fs";
 
 export class FilesElement extends HTMLElement {
   static observedAttributes = ["path"];

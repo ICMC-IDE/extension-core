@@ -1,7 +1,7 @@
 import "./style.css";
 import template from "./template.html?template";
 
-import * as UI from "core/ui";
+import * as UI from "@icmc-ide/core/ui";
 
 /**
  * Unlike other custom elements, activities does not attach a shadow root

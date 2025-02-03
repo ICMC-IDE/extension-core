@@ -5,7 +5,7 @@ import "./components";
 
 import "monaco-editor";
 
-import * as UI from "core/ui";
+import * as UI from "@icmc-ide/core/ui";
 
 const ELEMENTS = {
   "/activities": "x-core-activities",
