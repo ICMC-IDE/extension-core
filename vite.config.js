@@ -10,7 +10,7 @@ export default defineConfig({
       formats: ["es"],
     },
     rollupOptions: {
-      external: [/^core\/.*/],
+      external: ["@icmc-ide/core"],
     },
     sourcemap: "inline",
     minify: true,
@@ -23,7 +23,7 @@ export default defineConfig({
   plugins: [
     // Externalize dependencies on dev mode
     externalize({
-      external: [/^core\/.*/],
+      external: ["@icmc/core"],
     }),
     {
       name: "rollup-plugin-html-template",
