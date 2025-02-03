@@ -9,6 +9,7 @@
     "inlineSources": true,
     "inlineSourceMap": true,
     "outDir": "./dist/",
-    "moduleResolution": "bundler"
+    "moduleResolution": "bundler",
+    "types": ["vite/client"]
   }
 }
